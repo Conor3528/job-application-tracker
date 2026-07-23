@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
 
-    @EntityGraph(attributePaths = "company")
+    @EntityGraph(attributePaths = {"company", "interviews"})
     List<Application> findByStatus(ApplicationStatus status);
 
-    @EntityGraph(attributePaths = "company")
+    @EntityGraph(attributePaths = {"company", "interviews"})
     List<Application> findByCompanyId(Long companyId);
-                                                            // 2nd quick fix for the N+1 query problem
+
     @Override
-    @EntityGraph(attributePaths = "company")
+    @EntityGraph(attributePaths = {"company", "interviews"})
     List<Application> findAll();
 }

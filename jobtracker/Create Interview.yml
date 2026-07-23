@@ -1,0 +1,24 @@
+info:
+  name: Create Interview
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://localhost:8080/api/applications/1/interviews
+  body:
+    type: json
+    data: |-
+      {
+        "type": "PHONE_SCREEN",
+        "scheduledAt": "2026-07-28T14:00:00",
+        "outcome": "Passed",
+        "notes": "30 min call with recruiter, went well"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
