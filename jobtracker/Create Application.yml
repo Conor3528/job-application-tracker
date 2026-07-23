@@ -1,0 +1,26 @@
+info:
+  name: Create Application
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8080/api/applications
+  body:
+    type: json
+    data: |-
+      {
+        "roleTitle": "Backend Engineer Intern",
+        "status": "APPLIED",
+        "dateApplied": "2026-07-23",
+        "source": "LinkedIn",
+        "salaryRange": "€30-35k",
+        "company": { "id": 1 }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
