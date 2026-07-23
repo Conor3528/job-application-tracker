@@ -2,6 +2,7 @@ package com.conorryan.jobtracker;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class ApplicationController {
     }
 
     @PostMapping
-    public ResponseEntity<Application> createApplication(@RequestBody Application application) {
+    public ResponseEntity<Application> createApplication(@Valid @RequestBody Application application) {
         if (application.getCompany() != null && application.getCompany().getId() != null) {
             return companyRepository.findById(application.getCompany().getId())
                     .map(company -> {

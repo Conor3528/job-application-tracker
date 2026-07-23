@@ -2,6 +2,7 @@ package com.conorryan.jobtracker;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class CompanyController {
     }
 
     @PostMapping
-    public Company createCompany(@RequestBody Company company) {
+    public Company createCompany(@Valid @RequestBody Company company) {
         return companyRepository.save(company);
     }
 
