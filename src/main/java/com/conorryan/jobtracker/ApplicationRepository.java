@@ -16,4 +16,6 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     @Override
     @EntityGraph(attributePaths = {"company", "interviews"})
     List<Application> findAll();
+
+    long countByStatus(ApplicationStatus status);
 }

@@ -6,6 +6,9 @@ info:
 http:
   method: POST
   url: http://localhost:8080/api/applications
+  body:
+    type: json
+    data: "{}"
   auth: inherit
 
 settings:
