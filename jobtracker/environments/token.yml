@@ -1,0 +1,5 @@
+name: token
+variables:
+  - name: token
+    value: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb25vckBleGFtcGxlLmNvbSIsImlhdCI6MTc4NTk2MDM3MiwiZXhwIjoxNzg2MDQ2NzcyfQ.4xz7SSTlCgAgF7TeQ1qXH50jqvI87W_9sEy3z84biun0AHlopJhz8ktd4wnDE43aqxMziTDZ4wELiBPw_4FnHQ
+    description: ""

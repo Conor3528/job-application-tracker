@@ -6,6 +6,9 @@ info:
 http:
   method: POST
   url: http://localhost:8080/api/applications/1/interviews
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
   body:
     type: json
     data: |-

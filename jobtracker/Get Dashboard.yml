@@ -5,7 +5,11 @@ info:
 
 http:
   method: GET
-  url: http://localhost:8080/api/dashboard/stats
+  url: http://localhost:8080/api/dashboard/stats?Authorization=Bearer {{token}}
+  params:
+    - name: Authorization
+      value: Bearer {{token}}
+      type: query
   auth: inherit
 
 settings:

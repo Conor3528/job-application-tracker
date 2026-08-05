@@ -6,6 +6,9 @@ info:
 http:
   method: GET
   url: http://localhost:8080/api/applications?status=APPLIED
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
   params:
     - name: status
       value: APPLIED
