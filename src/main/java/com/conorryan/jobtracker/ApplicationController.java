@@ -20,12 +20,15 @@ public class ApplicationController {
     }
 
     @GetMapping
-    public List<Application> getAllApplications(
+    public List<ApplicationSummary> getAllApplications(
             @RequestParam(required = false) ApplicationStatus status) {
-        if (status != null) {
-            return applicationRepository.findByStatus(status);
-        }
-        return applicationRepository.findAll();
+        List<Application> applications = (status != null)
+                ? applicationRepository.findByStatus(status)
+                : applicationRepository.findAll();
+
+        return applications.stream()
+                .map(ApplicationSummary::from)
+                .toList();
     }
 
     @GetMapping("/{id}")
